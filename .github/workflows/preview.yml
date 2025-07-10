@@ -13,18 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js 22 and pnpm
+      - name: Setup Node.js 22
         uses: actions/setup-node@v3
         with:
           node-version: '22'
           cache: 'pnpm'
 
-      - name: Enable Corepack and Install Dependencies
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
-          echo "pnpm version: $(pnpm --version)"
-          pnpm install
+      - name: Install pnpm manually
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Build project
         run: pnpm build
