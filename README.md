@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <h1 align="center">Practical Test</h1>
+<br/>
+<a align="center" href="https://practical-test-dusky.vercel.app">View Page</a>
+</div>
+
+
+
+## Table of Contents
+
+- [Key Features](#key-features)
+- [Tech Stack & Architecture](#tech-stack--architecture)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation & Setup](#installation--setup)
+- [Available Scripts](#available-scripts)
+
+## Key Features
+This project is developed to fulfill the Practical Test for Frontend Developer at PT Pertamina Trans Kontinental. The key features include:
+- **Login Page**: A simple login form with username and password fields. Validates credentials against data stored in localStorage.
+- **Admin Account Simulation**: Automatically stores a predefined admin account (admin_test / admin1234) into localStorage on initial load.
+- **Login Validation**: Compares user input with the stored admin credentials and provides feedback for success or failure.
+- **Home Page with User List**: After successful login, users are redirected to the Home page which displays a list of users in card format.
+
+## Tech Stack & Architecture
+
+This project is built on a modern, feature-driven architecture that is both scalable and maintainable.
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **UI**: [React](https://reactjs.org/) [@radix-ui](https://www.radix-ui.com/)
+- **State Management**: [TanStack Query](https://tanstack.com/query/v5)
+- **HTTP Client**: [Axios](https://axios-http.com/)
+- **Tooling**: [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [Husky](https://typicode.github.io/husky/#/), [Commitlint](https://commitlint.js.org/#/)
+- **Package Manager**: [pnpm](https://pnpm.io/)
+
+The data flow typically follows this pattern:
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (version >=22.0.0)
+- pnpm (version >=10.0.0)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation & Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    ```bash
+    git clone https://github.com/shdiqq/practical-test.git
+    cd practical-test
+    ```
 
-## Learn More
+2.  **Install dependencies:**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    pnpm install
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3.  **Run the development server:**
+    ```bash
+    pnpm dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Script               | Description                                                                                                                                      |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `pnpm dev:turbo`     | Starts the app in development mode using **Turbopack** (experimental).                                                                           |
+| `pnpm scan`          | Runs the dev server with Turbopack and performs a security scan of the app at `localhost:3000` using [react-scan](https://github.com/raunofreiberg/react-scan). |
+| `pnpm build`         | Builds the app for production.                                    |
+| `pnpm start`         | Starts the production server using the output from `pnpm build`.                                                                                 |
+| `pnpm lint`          | Runs **ESLint** to detect and fix co                                                                                                             |
