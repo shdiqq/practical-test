@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "scan": "next dev --turbopack & npx react-scan@latest localhost:3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,7 +14,8 @@
   "dependencies": {
     "next": "15.3.5",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-scan": "^0.4.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
