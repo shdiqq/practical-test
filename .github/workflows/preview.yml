@@ -1,0 +1,32 @@
+name: Deploy Preview to Development
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 22 and Enable Corepack
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Enable and Install pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+          pnpm install
+
+      - name: Build project
+        run: pnpm build
+
+      - name: Deploy Preview to Vercel
+        run: npx vercel --token=${{ secrets.VERCEL_TOKEN }} --scope=shdiqq --project=practical-test --confirm
